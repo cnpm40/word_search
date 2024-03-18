@@ -1,4 +1,4 @@
-# Project Title
+# Word Search Generator
 
 Bài tập lớn công nghệ phần mềm
 
