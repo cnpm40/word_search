@@ -392,14 +392,21 @@ entry_bg_2 = canvas.create_image(
     95.5,
     image=entry_image_2
 )
-# Button List grade
-values = ["Primary Education", "Secondary Education", "Tertiary Education"]  # Replace with your options
-combobox2 = CTkComboBox(window, values=values, width=280, state="readonly", fg_color="#F3F3F3", dropdown_font=("Nunito", 13), dropdown_fg_color="#F3F3F3", dropdown_text_color="black", text_color="black", border_color="#F3F3F3", button_color="#F3F3F3", dropdown_hover_color="#D18686", button_hover_color="#D18686", bg_color="#F3F3F3", font=("Nunito", 15))
-combobox2.set("Primary Education")
-x1, y1, x2, y2 = 100.0, 280.0, 205.0, 352.0
-x = (x1 + x2) / 2 + 2
-y = (y1 + y2) / 2 -220
-canvas.create_window(x, y, window=combobox2)
+entry_2 = CTkEntry(
+    master=window,
+    placeholder_text='Type Subject Here .....',
+    placeholder_text_color="#D18686",
+    width=275,
+    font=("Nunito Bold", 14),
+    text_color="black",
+    bg_color="#F3F3F3",
+    fg_color="#F3F3F3",
+    border_color="#F3F3F3",
+)
+entry_2.place(
+    x=17.0,
+    y=121.0-37,
+)
 
 #canvas ENTRY 3: TOPIC
 entry_image_3 = PhotoImage(
@@ -413,7 +420,7 @@ entry_3 = CTkEntry(
     master=window,
     placeholder_text='Type Topic Here .....',
     placeholder_text_color="#D18686",
-    width=205,
+    width=275,
     font=("Nunito Bold", 14),
     text_color="black",
     bg_color="#F3F3F3",
@@ -433,21 +440,14 @@ entry_bg_4 = canvas.create_image(
     138.5,
     image=entry_image_4
 )
-entry_4 = CTkEntry(
-    master=window,
-    placeholder_text='Type Subject Here .....',
-    placeholder_text_color="#D18686",
-    width=150,
-    font=("Nunito Bold", 14),
-    text_color="black",
-    bg_color="#F3F3F3",
-    fg_color="#F3F3F3",
-    border_color="#F3F3F3",
-)
-entry_4.place(
-    x=17.0,
-    y=121.0+4,
-)
+# Button List grade
+values = ["Primary Education", "Secondary Education", "Tertiary Education"]  # Replace with your options
+combobox2 = CTkComboBox(window, values=values, width=180, state="readonly", fg_color="#F3F3F3", dropdown_font=("Nunito", 13), dropdown_fg_color="#F3F3F3", dropdown_text_color="black", text_color="black", border_color="#F3F3F3", button_color="#F3F3F3", dropdown_hover_color="#D18686", button_hover_color="#D18686", bg_color="#F3F3F3", font=("Nunito", 15))
+combobox2.set("Primary Education")
+x1, y1, x2, y2 = 100.0, 280.0, 205.0, 352.0
+x = (x1 + x2) / 2 - 47
+y = (y1 + y2) / 2 - 177
+canvas.create_window(x, y, window=combobox2)
 
 # Button List word search shape
 values = ["Square", "Circle", "Heart", "Diamond", "Donut", "Hexagon", "Octagon", "Pentagon"]  # Replace with your options
