@@ -384,7 +384,8 @@ entry_2.place(
 
 # Button List word search shape
 values = ["Square", "Circle", "Heart", "Diamond", "Donut", "Hexagon", "Octagon", "Pentagon"]  # Replace with your options
-combobox1 = CTkComboBox(window, values=values, width=270, fg_color="white", dropdown_font=("Nunito", 13), dropdown_fg_color="white", dropdown_text_color="black", text_color="black", border_color="white", button_color="white", dropdown_hover_color="#D18686", button_hover_color="#D18686", bg_color="#F3F3F3", font=("Nunito", 15))
+combobox1 = CTkComboBox(window, values=values, width=270, state="readonly", fg_color="white", dropdown_font=("Nunito", 13), dropdown_fg_color="white", dropdown_text_color="black", text_color="black", border_color="white", button_color="white", dropdown_hover_color="#D18686", button_hover_color="#D18686", bg_color="#F3F3F3", font=("Nunito", 15))
+combobox1.set("Square")
 x1, y1, x2, y2 = 100.0, 280.0, 205.0, 352.0
 x = (x1 + x2) / 2
 y = (y1 + y2) / 2

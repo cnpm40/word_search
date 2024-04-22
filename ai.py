@@ -394,11 +394,12 @@ entry_bg_2 = canvas.create_image(
 )
 # Button List grade
 values = ["Primary Education", "Secondary Education", "Tertiary Education"]  # Replace with your options
-combobox1 = CTkComboBox(window, values=values, width=280, fg_color="#F3F3F3", dropdown_font=("Nunito", 13), dropdown_fg_color="#F3F3F3", dropdown_text_color="black", text_color="black", border_color="#F3F3F3", button_color="#F3F3F3", dropdown_hover_color="#D18686", button_hover_color="#D18686", bg_color="#F3F3F3", font=("Nunito", 15))
+combobox2 = CTkComboBox(window, values=values, width=280, state="readonly", fg_color="#F3F3F3", dropdown_font=("Nunito", 13), dropdown_fg_color="#F3F3F3", dropdown_text_color="black", text_color="black", border_color="#F3F3F3", button_color="#F3F3F3", dropdown_hover_color="#D18686", button_hover_color="#D18686", bg_color="#F3F3F3", font=("Nunito", 15))
+combobox2.set("Primary Education")
 x1, y1, x2, y2 = 100.0, 280.0, 205.0, 352.0
 x = (x1 + x2) / 2 + 2
 y = (y1 + y2) / 2 -220
-canvas.create_window(x, y, window=combobox1)
+canvas.create_window(x, y, window=combobox2)
 
 #canvas ENTRY 3: TOPIC
 entry_image_3 = PhotoImage(
@@ -450,7 +451,8 @@ entry_4.place(
 
 # Button List word search shape
 values = ["Square", "Circle", "Heart", "Diamond", "Donut", "Hexagon", "Octagon", "Pentagon"]  # Replace with your options
-combobox1 = CTkComboBox(window, values=values, width=270, fg_color="white", dropdown_font=("Nunito", 13), dropdown_fg_color="white", dropdown_text_color="black", text_color="black", border_color="white", button_color="white", dropdown_hover_color="#D18686", button_hover_color="#D18686", bg_color="#F3F3F3", font=("Nunito", 15))
+combobox1 = CTkComboBox(window, values=values, width=270, state="readonly", fg_color="white", dropdown_font=("Nunito", 13), dropdown_fg_color="white", dropdown_text_color="black", text_color="black", border_color="white", button_color="white", dropdown_hover_color="#D18686", button_hover_color="#D18686", bg_color="#F3F3F3", font=("Nunito", 15))
+combobox1.set("Square")
 x1, y1, x2, y2 = 100.0, 280.0, 205.0, 352.0
 x = (x1 + x2) / 2 +2
 y = (y1 + y2) / 2 + 40
