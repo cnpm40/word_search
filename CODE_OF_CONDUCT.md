@@ -34,7 +34,7 @@ Quy tắc ứng xử này áp dụng cả trong không gian dự án và trong k
 
 ## Thực thi
 
-Hành vi lạm dụng, quấy rối hoặc không tôn trọng có thể được báo cáo bằng cách liên hệ với đội ngũ dự án tại [22022523@vnu.edu.vn]. Tiếp nhận tất cả các khiếu nại sẽ được xem xét và điều tra một cách kỹ lưỡng, và sẽ dẫn đến một phản hồi được coi là cần thiết và phù hợp với các hoàn cảnh. Đội ngũ dự án có nghĩa vụ giữ bí mật liên quan đến người báo cáo một sự kiện. 
+Hành vi lạm dụng, quấy rối hoặc không tôn trọng có thể được báo cáo bằng cách liên hệ với đội ngũ dự án tại 22022523@vnu.edu.vn. Tiếp nhận tất cả các khiếu nại sẽ được xem xét và điều tra một cách kỹ lưỡng, và sẽ dẫn đến một phản hồi được coi là cần thiết và phù hợp với các hoàn cảnh. Đội ngũ dự án có nghĩa vụ giữ bí mật liên quan đến người báo cáo một sự kiện. 
 
 ## Hướng dẫn
 
