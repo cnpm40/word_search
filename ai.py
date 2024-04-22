@@ -208,9 +208,9 @@ def get_entry_data_3():
     text = entry_3.get()
     return text
 
-# Get data from entry_4: subject
-def get_entry_data_4():
-    text = entry_4.get()
+# Get data from entry_2: subject
+def get_entry_data_2():
+    text = entry_2.get()
     return text
 
 # Get hình dạng từ shape combobox 1
