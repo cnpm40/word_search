@@ -1,3 +1,4 @@
+from WordList import *
 from GridWord import *
 from word_search_generator import WordSearch
 from word_search_generator.mask.shapes import *
@@ -9,8 +10,18 @@ from PlayAgainMenu import PlayAgainMenu
 from About import *
 from Alert import *
 from tkinter import Tk, Canvas, Button, PhotoImage
+from langchain_openai import ChatOpenAI
+import os
+from dotenv import load_dotenv, dotenv_values 
 
+# loading variables from .env file
+load_dotenv() 
 
+# Get the API key and call OpenAI API
+api_key = os.getenv("OPENAI_API_KEY")
+llm = ChatOpenAI(openai_api_key=api_key)
+
+# Get path of image
 OUTPUT_PATH = Path(__file__).parent
 ASSETS_PATH = OUTPUT_PATH / Path(r".\assets\frame0")
 
@@ -19,6 +30,11 @@ def relative_to_assets(path: str) -> Path:
     return ASSETS_PATH / Path(path)
 
 
+'''
+WINDOW
+'''
+
+# Make window
 window = Tk()
 window_width = window.winfo_reqwidth()
 window_height = window.winfo_reqheight()
@@ -28,6 +44,7 @@ position_down = int(window.winfo_screenheight()/2 - window_height/2)
 window.geometry("+{}+{}".format(position_right-400, position_down-300))
 window.geometry("1181x708")
 window.configure(bg = "#FFFFFF")
+
 
 '''
 CANVAS
@@ -151,6 +168,7 @@ canvas.create_text(
 topic_image = PhotoImage(
     file=relative_to_assets("bg.png"))
 
+
 '''
 DEF
 '''
@@ -177,22 +195,61 @@ def topic():
             height=40.0
         )
 
+# Draw puzzle and topic on the window
 def generator():
     text1 = get_entry_data()
-    text2 = get_entry_data_3()
-    if text2 == "":
-        os.system("python alert2.py")
-    elif text1 == "Type,list,of,words,here..." or text1 == "":
+    text2 = get_entry_data_2()
+    text3 = get_entry_data_3()
+    if text3 == "":
+        alert3 = Alert(window, 2)
+    elif text2 == "":
+        alert2 = Alert(window, 3)
+    elif text1 == "":
         alert1 = Alert(window, 1)
     else:
-        puzzle()
+        make_puzzle()
         topic()
 
-def run_playagainmenu():
-    play_again_menu = PlayAgainMenu(window)
+# Generate words
+def gen_word():
+    # Check
+    text2 = get_entry_data_2()
+    text3 = get_entry_data_3()
+    if text3 == "":
+        alert3 = Alert(window, 2)
+    elif text2 == "":
+        alert2 = Alert(window, 3)
+    else:
+        # Prompt
+        prompt = f"Generate 10 compound words related to {get_entry_data_3()} in {get_entry_data_2()} with a maximum length of 12 characters suitable for {get_combobox2_selection()}."
 
-def run_home():
+        # Get answer
+        ans = llm.invoke(prompt)
+        print(ans.content)
+
+        # Insert Word
+        entry_1.delete("1.0", "end")
+        entry_1.insert("1.0", ans.content)
+
+# Run about menu
+def run_about():
     about_menu = About(window)
+
+# Run play again menu    
+def run_playagainmenu():
+    again_menu = PlayAgainMenu(window, 1)
+
+# Save pdf
+def browse_directory():
+    directory_path = filedialog.askdirectory()
+    file_path = directory_path + "/puzzle.pdf"
+    if os.path.exists(file_path):
+        i = 1
+        while os.path.exists(file_path):
+            file_path = directory_path + "/puzzle(" + str(i) + ").pdf"
+            i += 1
+    puzzle.save(path= file_path)
+    
 
 # Get data from entry_1: word list
 def get_entry_data():
@@ -213,8 +270,13 @@ def get_entry_data_2():
 
 # Get hình dạng từ shape combobox 1
 def get_combobox1_selection():
-    selection = combobox1.get()  # Get the current selection from combobox
-    return selection
+    selection1 = combobox1.get()  # Get the current selection from combobox
+    return selection1
+
+# Get hình dạng từ shape combobox 2
+def get_combobox2_selection():
+    selection2 = combobox2.get()  # Get the current selection from combobox
+    return selection2
 
 # Get độ khó từ difficulty levels slider
 def get_slider_value():
@@ -225,22 +287,50 @@ def get_slider_value():
 def get_radiobutton_selection():
     selection = size_var.get()  # Get the current selection from radiobutton
     if selection == "Small":
-        return 14
+        return 15
     if selection == "Medium":
-        return 20
+        return 18
     if selection == "Large":
-        return 25
+        return 21
     
 # SCRAMBLE THE PUZZLE
-def puzzle():
+def make_puzzle():
+    global puzzle
     level = int(get_slider_value())
+    re_level = {
+        1 : 1,
+        2 : 2,
+        3 : 8,
+        4 : 7,
+        5 : 4,
+        6 : 5,
+        7 : 3
+    }.get(level)
     size = get_radiobutton_selection()
     mask = get_combobox1_selection()
     text = get_entry_data()
-    puzzle = WordSearch(text, level, size)
-    words = [word.text for word in puzzle._words]
-    GridWord(window, puzzle._puzzle, words)
-    print(puzzle)
+    puzzle = WordSearch(text, re_level, size) # Puzzle
+    if mask == "Circle":
+        puzzle.apply_mask(Circle())
+    if mask == "Heart":
+        puzzle.apply_mask(Heart())    
+    if mask == "Diamond":
+        puzzle.apply_mask(Diamond())
+    if mask == "Donut":
+        puzzle.apply_mask(Donut())
+    if mask == "Hexagon":
+        puzzle.apply_mask(Hexagon())
+    if mask == "Octagon":
+        puzzle.apply_mask(Octagon())
+    if mask == "Pentagon":
+        puzzle.apply_mask(Pentagon())
+    words = [word.text for word in puzzle._words] # List of words
+    hint = [word.position_xy for word in puzzle._words] # List of hint
+    if None in hint:
+        remove_alert = Alert(window, 4)
+    wordlist = WordList(window, words, hint) # Word list column
+    grid = GridWord(window, puzzle._puzzle, words, hint, wordlist) # Grid word
+    wordlist.setGrid(grid)
 
 
 '''
@@ -276,7 +366,7 @@ button_2 = Button(
     compound="center",  # Add this line
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_2 clicked"),
+    command= browse_directory,
     relief="flat",
     font=("Nunito Bold", 20),  # Change the font size here
     fg="white"  # Change the font color here
@@ -316,7 +406,7 @@ button_4 = Button(
     image=button_image_4,
     borderwidth=0,
     highlightthickness=0,
-    command=run_home,
+    command=run_about,
     relief="flat"
 )
 button_4.place(
@@ -333,7 +423,7 @@ button_5 = Button(
     image=button_image_5,
     borderwidth=0,
     highlightthickness=0,
-    command=lambda: print("button_5 clicked"),
+    command= gen_word,
     relief="flat"
 )
 button_5.place(
@@ -366,17 +456,6 @@ entry_1 = CTkTextbox(
     scrollbar_button_color="#D18686",
     scrollbar_button_hover_color="#D18686"
 )
-def on_entry1_click(event):
-    # function that gets called whenever entry1 is clicked
-    if entry_1.get("1.0", 'end-1c') == 'Type list of words here...':
-        entry_1.delete("1.0", "end")  # delete all the text in the entry
-        entry_1.insert("1.0", '')  # Insert blank for user input
-def on_entry1_focusout(event):
-    if entry_1.get("1.0", 'end-1c') == '':
-        entry_1.insert("1.0", 'Type list of words here...')
-entry_1.bind('<FocusIn>', on_entry1_click)
-entry_1.bind('<FocusOut>', on_entry1_focusout)
-entry_1.insert("1.0", 'Type list of words here...')
 entry_1.place(
     x=17.0,
     y=166.0,
@@ -469,14 +548,14 @@ canvas.create_window(x+120, y, window=my_label)
 
 #Button WORD SEARCH SIZE small - medium - large
 size_var = StringVar()
-radiobutton_small = CTkRadioButton(window, text="Small", variable=size_var, value="Small", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
-radiobutton_medium = CTkRadioButton(window, text="Medium", variable=size_var, value="Medium", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
-radiobutton_large = CTkRadioButton(window, text="Large", variable=size_var, value="Large", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
+radiobutton_small = CTkRadioButton(window, text="Small\n(15 x 15)", variable=size_var, value="Small", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
+radiobutton_medium = CTkRadioButton(window, text="Medium\n(18 x 18)", variable=size_var, value="Medium", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
+radiobutton_large = CTkRadioButton(window, text="Large\n(21 x 21)", variable=size_var, value="Large", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
 size_var.set("Small")
 x1, y1, x2, y2 = 15.0, 394.0, 293.0, 500.0
-x_small = x1 + (x2 - x1) / 6 +15
-x_medium = x1 + 3 * (x2 - x1) / 6 +15
-x_large = x1 + 5 * (x2 - x1) / 6 +15
+x_small = x1 + (x2 - x1) / 6 + 15
+x_medium = x1 + 3 * (x2 - x1) / 6 + 6
+x_large = x1 + 4.5 * (x2 - x1) / 6 + 21
 y = (y1 + y2) / 2 + 75
 canvas.create_window(x_small, y, window=radiobutton_small)
 canvas.create_window(x_medium, y, window=radiobutton_medium)

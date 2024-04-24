@@ -28,6 +28,7 @@ class PlayAgainMenu:
 
         # Make window for menu
         self.toplevel = tk.Toplevel(master, height = 563, width = 275, bg="#FFFFFF")
+        self.toplevel.grab_set()
         window_width = self.toplevel.winfo_reqwidth()
         window_height = self.toplevel.winfo_reqheight()
         position_right = int(self.toplevel.winfo_screenwidth()/2 - window_width/2)

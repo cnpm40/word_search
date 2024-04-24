@@ -23,6 +23,7 @@ class About:
 
         # Make window for about menu
         self.toplevel = tk.Toplevel(master, height = 1000, width = 600, bg="#FFFFFF")
+        self.toplevel.grab_set()
         window_width = self.toplevel.winfo_reqwidth()
         window_height = self.toplevel.winfo_reqheight()
         position_right = int(self.toplevel.winfo_screenwidth()/2 - window_width/2)

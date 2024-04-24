@@ -16,6 +16,15 @@ class GridWord:
         
         self.grid_data = grid_data # Grid of characters of puzzle
 
+        # Check available word
+        for i in range(len(hint)):
+            if hint[i] is None:
+                words[i] = 0
+        while None in hint:
+            hint.remove(None)
+        while 0 in words:
+            words.remove(0)
+
         self.words = words # List of words
 
         self.hint = hint # List of hints position
@@ -149,15 +158,21 @@ class GridWord:
         index = self.words.index(word)
         (col, row) = eval(self.hint[index])
         col, row = col - 1, row - 1
-        self.is_hinted[row][col] = True
         x0 = col * self.cell_width
         y0 = row * self.cell_height
         x1 = (col + 1) * self.cell_width
         y1 = (row + 1) * self.cell_height
 
         # Highlight hint
-        self.canvas.create_rectangle(x0, y0, x1, y1, outline="black", width=2, fill= "yellow")
-        self.canvas.create_text((x0 + x1) / 2, (y0 + y1) / 2, text=self.grid_data[row][col], font=("Arial", 12))
+        if self.is_hinted[row][col] == False:
+            self.is_hinted[row][col] = True
+            self.canvas.create_rectangle(x0, y0, x1, y1, outline="black", width=2, fill= "yellow")
+            self.canvas.create_text((x0 + x1) / 2, (y0 + y1) / 2, text=self.grid_data[row][col], font=("Arial", 12))
+        # Delete hint
+        else:
+            self.is_hinted[row][col] = False
+            self.canvas.create_rectangle(x0, y0, x1, y1, outline="black", width=2, fill= "white")
+            self.canvas.create_text((x0 + x1) / 2, (y0 + y1) / 2, text=self.grid_data[row][col], font=("Arial", 12))
 
     # Delete highlighted hint
     def delete_hint(self, event):
@@ -166,15 +181,16 @@ class GridWord:
         row = event.y // self.cell_height
 
         # Delete hint
-        if self.is_hinted[row][col] == True:
-            x0 = col * self.cell_width
-            y0 = row * self.cell_height
-            x1 = (col + 1) * self.cell_width
-            y1 = (row + 1) * self.cell_height
-            if self.grid_data[row][col] != '':
-                self.canvas.create_rectangle(x0, y0, x1, y1, outline="black", width=2, fill= "white")
-                self.canvas.create_text((x0 + x1) / 2, (y0 + y1) / 2, text=self.grid_data[row][col], font=("Arial", 12))
-            self.is_hinted[row][col] = False
+        if row < len(self.grid_data) and col < len(self.grid_data[0]):
+            if self.is_hinted[row][col] == True:
+                x0 = col * self.cell_width
+                y0 = row * self.cell_height
+                x1 = (col + 1) * self.cell_width
+                y1 = (row + 1) * self.cell_height
+                if self.grid_data[row][col] != '':
+                    self.canvas.create_rectangle(x0, y0, x1, y1, outline="black", width=2, fill= "white")
+                    self.canvas.create_text((x0 + x1) / 2, (y0 + y1) / 2, text=self.grid_data[row][col], font=("Arial", 12))
+                self.is_hinted[row][col] = False
     
     # Check if all the words have been found
     def check_if_end(self):

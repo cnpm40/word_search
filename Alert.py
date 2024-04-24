@@ -20,7 +20,7 @@ class Alert:
         self.master = master
 
         # Mode text
-        # 1: Word       2: Topic     3: Subject
+        # 1: Word       2: Topic     3: Subject     4: Remove word
         self.mode = mode
         if self.mode == 1:
             self.warn_text = "! YOU MUST TO TYPE WORD LIST"
@@ -28,9 +28,12 @@ class Alert:
             self.warn_text = "! YOU MUST TO TYPE TOPIC NAME"
         if self.mode == 3:
             self.warn_text = "! YOU MUST TO TYPE SUBJECT NAME"
+        if self.mode == 4:
+            self.warn_text = "! WORDS THAT DO NOT FIT THE TABLE SIZE\n WILL BE AUTOMATICALLY DELETED"
 
         # Make window
         self.toplevel = tk.Toplevel(master, height = 563, width = 275, bg="#FFFFFF")
+        self.toplevel.grab_set()
         window_width = self.toplevel.winfo_reqwidth()
         window_height = self.toplevel.winfo_reqheight()
         position_right = int(self.toplevel.winfo_screenwidth()/2 - window_width/2)
@@ -60,12 +63,13 @@ class Alert:
 
         # Canvas TEXT
         self.canvas.create_text(
-            117.0,
+            563.0 / 2,
             101.0,
-            anchor="nw",
+            anchor="center",
             text=self.warn_text,
             fill="#A97E54",
-            font=("Nunito Bold", 20 * -1)
+            font=("Nunito Bold", 20 * -1),
+            justify="center"
         )
 
         # Canvas BUTTON: OK

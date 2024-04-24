@@ -225,6 +225,14 @@ def get_entry_data():
     if text == 'Type words here (Example: cat dog rat...):':
         text = ""
     words = text.split()
+    size = get_radiobutton_selection()
+    is_valid = True
+    for wd in words:
+        if len(wd) > size:
+            words.remove(wd)
+            is_valid = False
+    if is_valid == False:
+        remove_alert = Alert(window, 4)
     text = ",".join(words)
     return text
 
@@ -456,14 +464,14 @@ canvas.create_window(x+120, y, window=my_label)
 
 #Button WORD SEARCH SIZE small - medium - large
 size_var = StringVar()
-radiobutton_small = CTkRadioButton(window, text="Small", variable=size_var, value="Small", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
-radiobutton_medium = CTkRadioButton(window, text="Medium", variable=size_var, value="Medium", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
-radiobutton_large = CTkRadioButton(window, text="Large", variable=size_var, value="Large", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
+radiobutton_small = CTkRadioButton(window, text="Small\n(15 x 15)", variable=size_var, value="Small", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
+radiobutton_medium = CTkRadioButton(window, text="Medium\n(18 x 18)", variable=size_var, value="Medium", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
+radiobutton_large = CTkRadioButton(window, text="Large\n(21 x 21)", variable=size_var, value="Large", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
 size_var.set("Small")
 x1, y1, x2, y2 = 15.0, 394.0, 293.0, 500.0
-x_small = x1 + (x2 - x1) / 6 +15
-x_medium = x1 + 3 * (x2 - x1) / 6 +15
-x_large = x1 + 5 * (x2 - x1) / 6 +15
+x_small = x1 + (x2 - x1) / 6 + 15
+x_medium = x1 + 3 * (x2 - x1) / 6 + 6
+x_large = x1 + 4.5 * (x2 - x1) / 6 + 21
 y = (y1 + y2) / 2 +40
 canvas.create_window(x_small, y, window=radiobutton_small)
 canvas.create_window(x_medium, y, window=radiobutton_medium)
