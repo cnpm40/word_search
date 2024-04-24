@@ -174,7 +174,7 @@ DEF
 '''
 # Canvas topic
 def topic():
-        topic_text = str(get_entry_data_2())
+        topic_text = str(get_entry_data_3())
         size = 20
         if len(topic_text) > 14:
             size = int(size * 14 / len(topic_text))
@@ -221,7 +221,7 @@ def gen_word():
         alert2 = Alert(window, 3)
     else:
         # Prompt
-        prompt = f"Generate 10 compound words related to {get_entry_data_3()} in {get_entry_data_2()} with a maximum length of 12 characters suitable for {get_combobox2_selection()}."
+        prompt = f"Generate 15 compound words related to {get_entry_data_3()} in {get_entry_data_2()} with a maximum length of 12 characters suitable for {get_combobox2_selection()}."
 
         # Get answer
         ans = llm.invoke(prompt)
@@ -471,7 +471,7 @@ entry_bg_2 = canvas.create_image(
 )
 entry_2 = CTkEntry(
     master=window,
-    placeholder_text='Type Subject Here .....',
+    placeholder_text='Type Subject Here (Example: History)',
     placeholder_text_color="#D18686",
     width=275,
     font=("Nunito Bold", 14),
@@ -495,10 +495,10 @@ entry_bg_3 = canvas.create_image(
 )
 entry_3 = CTkEntry(
     master=window,
-    placeholder_text='Type Topic Here .....',
+    placeholder_text='Type Topic Here (Example: World War 2)',
     placeholder_text_color="#D18686",
     width=275,
-    font=("Nunito Bold", 14),
+    font=("Nunito Bold", 13),
     text_color="black",
     bg_color="#F3F3F3",
     fg_color="#F3F3F3",
