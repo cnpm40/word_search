@@ -1,45 +1,69 @@
-# Quy Tắc Ứng Xử
+# Code of Conduct - WORD-SEARCH
 
-## Cam kết của chúng tôi
+## Our Pledge
 
-Với mục tiêu tạo ra một môi trường cởi mở và thân thiện, chúng tôi cam kết làm cho việc tham gia vào cộng đồng của chúng tôi một trải nghiệm không bị quấy rối cho mọi người, bất kể tuổi tác, kích cỡ cơ thể, khả năng khuyết tật, dân tộc, đặc điểm giới tính, bằng cấp, nơi cư ngụ, hình thức, kinh nghiệm, chủng tộc, tôn giáo hay xu hướng tình dục.
+In the interest of fostering an open and welcoming environment, we as
+contributors and maintainers pledge to make participation in our project and
+our community a harassment-free experience for everyone, regardless of age, body
+size, disability, ethnicity, sex characteristics, gender identity and expression,
+level of experience, education, socio-economic status, nationality, personal
+appearance, race, religion, or sexual identity and orientation.
 
-## Tiêu chuẩn của chúng tôi
+## Our Standards
 
-Ví dụ về hành vi tạo ra môi trường tích cực bao gồm:
+Examples of behaviour that contributes to a positive environment for our
+community include:
 
-- Sử dụng ngôn ngữ và hình ảnh thân thiện, bao dung
-- Tôn trọng các quan điểm và trải nghiệm khác nhau
-- Chấp nhận lời phê bình xây dựng một cách lịch sự
-- Tập trung vào điều gì tốt nhất cho cộng đồng
-- Thể hiện sự cảm thông đối với những thành viên khác của cộng đồng
+* Demonstrating empathy and kindness toward other people
+* Being respectful of differing opinions, viewpoints, and experiences
+* Giving and gracefully accepting constructive feedback
+* Accepting responsibility and apologising to those affected by our mistakes,
+  and learning from the experience
+* Focusing on what is best not just for us as individuals, but for the
+  overall community
 
-Ví dụ về hành vi không được chấp nhận bởi các thành viên:
+Examples of unacceptable behaviour include:
 
-- Sử dụng ngôn ngữ hoặc hình ảnh thiếu tôn trọng và quấy rối tình dục
-- Trolling, xúc phạm/thể hiện rõ sự chế giễu và các hành vi tấn công cá nhân hoặc chính trị
-- Quấy rối công khai hoặc riêng tư
-- Công bố thông tin cá nhân của người khác, như địa chỉ cụ thể, mà không có sự cho phép rõ ràng
-- Các hành vi khác có thể được xem xét là không phù hợp trong một môi trường chuyên nghiệp
+* The use of sexualised language or imagery, and sexual attention or advances
+* Trolling, insulting or derogatory comments, and personal or political attacks
+* Public or private harassment
+* Publishing others' private information, such as a physical or email
+  address, without their explicit permission
+* Other conduct which could reasonably be considered inappropriate in a
+professional setting
 
-## Trách nhiệm của bạn
+## Our Responsibilities
 
-Những người bảo trì dự án có trách nhiệm làm rõ các tiêu chuẩn của hành vi chấp nhận được và dự kiến sẽ thực hiện các biện pháp sửa chữa thích đáng và công bằng để xử lý bất kỳ hành vi không chấp nhận được nào.
+Project maintainers are responsible for clarifying and enforcing our standards of
+acceptable behaviour and will take appropriate and fair corrective action in
+response to any instances of unacceptable behaviour.
 
-Những người bảo trì dự án có quyền và trách nhiệm loại bỏ, chỉnh sửa, hoặc từ chối các bình luận, cam kết, mã, sửa chữa wiki, vấn đề, và đóng góp khác mà không phù hợp với Quy Tắc Ứng Xử này. Khi cần thiết, họ cũng có thể cấm tạm thời hoặc vĩnh viễn bất kỳ đóng góp viên nào có hành vi xem xét là không thân thiện, đe dọa, sỉ nhục hoặc có hại.
+Project maintainers have the right and responsibility to remove, edit, or reject
+comments, commits, code, wiki edits, issues, and other contributions that are
+not aligned to this Code of Conduct, or to ban
+temporarily or permanently any contributor for other behaviours that they deem
+inappropriate, threatening, offensive, or harmful.
 
-## Phạm vi
+## Scope
 
-Quy tắc ứng xử này áp dụng cả trong không gian dự án và trong không gian công cộng khi một cá nhân đại diện cho dự án hoặc cộng đồng của nó. Ví dụ về đại diện cho một dự án hoặc cộng đồng bao gồm việc sử dụng tài khoản chính thức của dự án trên mạng xã hội hoặc phát biểu tại các sự kiện trực tuyến hay ngoại tuyến, hoặc việc thẻ đeo nhân viên chứng minh là thành viên. 
+This Code of Conduct applies within all community spaces, and also applies when
+an individual is officially representing the community in public spaces.
+Examples of representing our community include using an official e-mail address,
+posting via an official social media account, or acting as an appointed
+representative at an online or offline event.
 
-## Thực thi
+## Enforcement
 
-Hành vi lạm dụng, quấy rối hoặc không tôn trọng có thể được báo cáo bằng cách liên hệ với đội ngũ dự án tại 22022523@vnu.edu.vn. Tiếp nhận tất cả các khiếu nại sẽ được xem xét và điều tra một cách kỹ lưỡng, và sẽ dẫn đến một phản hồi được coi là cần thiết và phù hợp với các hoàn cảnh. Đội ngũ dự án có nghĩa vụ giữ bí mật liên quan đến người báo cáo một sự kiện. 
+Instances of abusive, harassing, or otherwise unacceptable behaviour may be
+reported to the community leaders responsible for enforcement at oppice312@gmail.com.
+All complaints will be reviewed and investigated promptly and fairly.
 
-## Hướng dẫn
+All community leaders are obligated to respect the privacy and security of the
+reporter of any incident.
 
-Các hướng dẫn cụ thể về cách thực thi Quy tắc Ứng Xử có thể được đăng tải độc lập.
+## Attribution
 
-Những người bảo trì dự án có thể thay đổi hoặc thay thế Quy Tắc Ứng Xử này theo quy định.
-
-Lấy cảm hứng từ [Contributor Covenant](https://www.contributor-covenant.org), phiên bản 1.4.
+This Code of Conduct is adapted from the [Contributor Covenant](https://contributor-covenant.org/), version
+[1.4](https://www.contributor-covenant.org/version/1/4/code-of-conduct/code_of_conduct.md) and
+[2.0](https://www.contributor-covenant.org/version/2/0/code_of_conduct/code_of_conduct.md),
+and was generated by [contributing-gen](https://github.com/bttger/contributing-gen).

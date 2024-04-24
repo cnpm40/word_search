@@ -1,28 +1,28 @@
-# Chính Sách Bảo Mật
+# Privacy Policy
 
-## Báo cáo một lỗ hổng bảo mật
+## Reporting a Security Vulnerability
 
-Chúng tôi coi trọng việc bảo mật của dự án và thông tin của người dùng. Nếu bạn phát hiện ra một lỗ hổng bảo mật trong dự án, xin hãy thông báo cho chúng tôi ngay lập tức.
+We take the security of the project and user information seriously. If you discover a security vulnerability in the project, please report it to us immediately.
 
-### Làm sao để báo cáo?
+### How to report?
 
-Để báo cáo một lỗ hổng bảo mật, vui lòng thực hiện theo các bước sau:
+To report a security vulnerability, please follow these steps:
 
-1. Đừng công khai thông tin về lỗi bảo mật trên các diễn đàn công cộng, issue trackers, hoặc thông qua các mạng xã hội.
-2. Gửi chi tiết cần thiết về lỗ hổng bảo mật đến địa chỉ email 22022523@vnu.edu.vn, bao gồm các bước để tái hiện vấn đề (nếu áp dụng) cùng với bất kỳ bằng chứng nào khác như hình ảnh hoặc video.
-3. Đợi phản hồi từ nhóm của chúng tôi — chúng tôi sẽ liên lạc lại sau khi xem xét báo cáo và thông báo về bất kỳ bước tiếp theo nào.
+1. Do not publicly disclose information about the security issue on public forums, issue trackers, or social networks.
+2. Send the necessary details about the security vulnerability to the email address oppice312@gmail.com, including steps to reproduce the issue (if applicable) along with any other evidence such as images or videos.
+3. Wait for a response from our team - we will contact you after reviewing the report and communicate any next steps.
 
-### Chính sách phản hồi
+### Response Policy
 
-Sau khi bạn gửi báo cáo, nhóm bảo mật của chúng tôi cam kết:
+After you submit the report, our security team commits to:
 
-- Xác nhận việc nhận được báo cáo của bạn.
-- Cung cấp một thời gian kỳ vọng để xác minh lỗ hổng.
-- Thông báo cho bạn về việc đã xác minh và áp dụng bản vá (nếu có).
-- Đề nghị, nếu cần, một bản ghi công nhận cho việc phát hiện lỗ hổng trong các tài liệu của dự án.
+- Confirm receipt of your report.
+- Provide an expected timeline for verifying the vulnerability.
+- Notify you of the verification and application of a patch (if applicable).
+- Recommend, if necessary, a public acknowledgment for the discovery of the vulnerability in the project's documentation.
 
-Chúng tôi mong muốn hợp tác với bạn để xử lý vấn đề một cách cẩn thận và khéo léo, đảm bảo rằng việc thông tin về các vấn đề không làm tăng thêm rủi ro cho cộng đồng.
+We look forward to collaborating with you to carefully and skillfully address the issue, ensuring that the disclosure of issues does not pose additional risks to the community.
 
-Cảm ơn bạn đã giúp đỡ duy trì an toàn và bảo mật cho dự án!
+Thank you for helping maintain the safety and security of the project!
 
-22022523@vnu.edu.vn - Địa chỉ liên hệ với nhóm bảo mật của dự án
+oppice312@gmail.com - Contact address for the project's security team
