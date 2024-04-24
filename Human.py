@@ -254,10 +254,19 @@ def get_radiobutton_selection():
 def make_puzzle():
     global puzzle
     level = int(get_slider_value())
+    re_level = {
+        1 : 1,
+        2 : 2,
+        3 : 8,
+        4 : 7,
+        5 : 4,
+        6 : 5,
+        7 : 3
+    }.get(level)
     size = get_radiobutton_selection()
     mask = get_combobox1_selection()
     text = get_entry_data()
-    puzzle = WordSearch(text, level, size) # Puzzle
+    puzzle = WordSearch(text, re_level, size) # Puzzle
     if mask == "Circle":
         puzzle.apply_mask(Circle())
     if mask == "Heart":
