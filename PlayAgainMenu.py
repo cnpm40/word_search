@@ -114,7 +114,7 @@ class PlayAgainMenu:
     def run_menu(self):
         self.toplevel.destroy()
         self.master.destroy()
-        os.system('python menu.py')
+        os.system('python MainMenu.py')
 
     # NO    
     def run_play(self):

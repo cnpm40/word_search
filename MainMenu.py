@@ -91,7 +91,7 @@ def run_program_1():
 # Human mode
 def run_program_2():
     window.destroy()
-    os.system("python hu.py")
+    os.system("python Human.py")
 
 # About menu    
 def run_program_3():
