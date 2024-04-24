@@ -167,6 +167,9 @@ DEF
 # Canvas topic
 def topic():
         topic_text = str(get_entry_data_2())
+        size = 20
+        if len(topic_text) > 14:
+            size = int(size * 14 / len(topic_text))
         topic = Button(
             image=topic_image,
             text= topic_text,
@@ -174,14 +177,14 @@ def topic():
             borderwidth=0,
             highlightthickness=0,
             relief="flat",
-            font=("Nunito Bold", 20),  # Change the font size here
+            font=("Nunito Bold", size),  # Change the font size here
             fg="black",  # Change the font color here
         )
         topic.place(
-            x=1010.0,
+            x=968.0,
             y=50.0,
-            width=120.0,
-            height=25.0
+            width=207.0,
+            height=40.0
         )
 
 # Draw puzzle and topic on the window
