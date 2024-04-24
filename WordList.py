@@ -48,7 +48,7 @@ class WordList:
         # Draw text label 
         for i in range(len(self.words)):
             if len(self.words[i]) > 12:
-                size = 10
+                size = int(16 * 12 / len(self.words[i]))
             else: size = 16
             label = self.canvas.create_text(182 / 2, height * (i + 0.5), text=self.words[i], fill="red", anchor="center", tags="label", font=("Nunito", size, "bold"), justify= "center")
             self.canvas.tag_bind(label, "<Button-1>", lambda event, index=i: self.on_text_click(self.words[index]))
@@ -70,7 +70,7 @@ class WordList:
         for i in range(len(self.grid.is_correct)):
             if self.grid.is_correct[i] == True:
                 if len(self.words[i]) > 12:
-                    size = 10
+                    size = int(16 * 12 / len(self.words[i]))
                 else: size = 16
                 self.canvas.create_text(182 / 2, height * (i + 0.5), text=self.words[i], fill="Green", anchor="center", tags="label", font=("Nunito", size, "bold"), justify= "center")
 
