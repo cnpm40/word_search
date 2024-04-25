@@ -11,13 +11,14 @@ from About import *
 from Alert import *
 from tkinter import Tk, Canvas, Button, PhotoImage
 from langchain_openai import ChatOpenAI
-import os
+import os,time
 from dotenv import load_dotenv, dotenv_values 
 import socket
 
 # loading variables from .env file
 load_dotenv() 
 
+last_pressed_time = None
 # Get the API key and call OpenAI API
 api_key = os.getenv("OPENAI_API_KEY")
 llm = ChatOpenAI(openai_api_key=api_key)
