@@ -13,7 +13,7 @@ from tkinter import Tk, Canvas, Button, PhotoImage
 from langchain_openai import ChatOpenAI
 import os
 from dotenv import load_dotenv, dotenv_values 
-import time
+import socket
 
 # loading variables from .env file
 load_dotenv() 
@@ -211,25 +211,38 @@ def generator():
         make_puzzle()
         topic()
 
+def check_internet():
+    try:
+        # Thử kết nối đến một trang web bất kỳ (ở đây là google.com)
+        socket.setdefaulttimeout(3)  # Thiết lập timeout cho kết nối socket
+        socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect(("www.google.com", 80))
+        return True
+    except socket.error:
+        return False
+
 # Generate words
 def gen_word():
-    # Check
-    text2 = get_entry_data_2()
-    text3 = get_entry_data_3()
-    if text3 == "":
-        alert3 = Alert(window, 2)
-    elif text2 == "":
-        alert2 = Alert(window, 3)
+    # Check internet
+    if check_internet() is False:
+        check_alert = Alert(window, 5)
     else:
-        # Prompt
-        prompt = f"Generate 15 compound words related to {get_entry_data_3()} in {get_entry_data_2()} with a maximum length of 12 characters suitable for {get_combobox2_selection()}."
+    # Check
+        text2 = get_entry_data_2()
+        text3 = get_entry_data_3()
+        if text3 == "":
+            alert3 = Alert(window, 2)
+        elif text2 == "":
+            alert2 = Alert(window, 3)
+        else:
+            # Prompt
+            prompt = f"Generate 15 compound words related to {get_entry_data_3()} in {get_entry_data_2()} with a maximum length of 12 characters suitable for {get_combobox2_selection()}."
 
-        # Get answer
-        ans = llm.invoke(prompt)
+            # Get answer
+            ans = llm.invoke(prompt)
 
-        # Insert Word
-        entry_1.delete("1.0", "end")
-        entry_1.insert("1.0", ans.content)
+            # Insert Word
+            entry_1.delete("1.0", "end")
+            entry_1.insert("1.0", ans.content)
 
 # Run about menu
 def run_about():

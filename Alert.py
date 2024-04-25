@@ -20,7 +20,7 @@ class Alert:
         self.master = master
 
         # Mode text
-        # 1: Word       2: Topic     3: Subject     4: Remove word
+        # 1: Word       2: Topic     3: Subject     4: Remove word      5: Internet
         self.mode = mode
         if self.mode == 1:
             self.warn_text = "! YOU MUST TO TYPE WORD LIST"
@@ -30,6 +30,8 @@ class Alert:
             self.warn_text = "! YOU MUST TO TYPE SUBJECT NAME"
         if self.mode == 4:
             self.warn_text = "! WORDS THAT DO NOT FIT THE TABLE SIZE\n WILL BE AUTOMATICALLY DELETED"
+        if self.mode == 5:
+            self.warn_text = "! NO INTERNET CONNECTION.\nCONNECT TO THE INTERNET TO GENERATE WORDS."
 
         # Make window
         self.toplevel = tk.Toplevel(master, height = 563, width = 275, bg="#FFFFFF")
