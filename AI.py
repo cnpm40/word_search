@@ -231,8 +231,8 @@ def gen_word():
         
         current_time = time.time()
         
-        # Kiểm tra nếu đây là lần đầu tiên nhấn, hoặc đã qua 30 giây từ lần cuối cùng
-        if last_pressed_time is None or current_time - last_pressed_time >= 15:
+        # Kiểm tra nếu đây là lần đầu tiên nhấn, hoặc đã qua 7 giây từ lần cuối cùng
+        if last_pressed_time is None or current_time - last_pressed_time >= 7:
             last_pressed_time = current_time
         
             # Check
@@ -256,8 +256,8 @@ def gen_word():
                 
         else:
             # Hiển thị thông báo nếu nhấn quá sớm
-            wait_time = 15 - (current_time - last_pressed_time)
-            alert5 =  Alert(window, 6, int(wait_time)) 
+            wait_time = 7 - (current_time - last_pressed_time)
+            alert6 =  Alert(window, 6, int(wait_time)) 
 
 # Run about menu
 def run_about():

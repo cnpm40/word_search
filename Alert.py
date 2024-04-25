@@ -20,7 +20,7 @@ class Alert:
         self.master = master
 
         # Mode text
-        # 1: Word       2: Topic     3: Subject     4: Remove word      5: Delay AI
+        # 1: Word       2: Topic     3: Subject     4: Remove word      5: Check Internet       6: Delay
         self.mode = mode
         if self.mode == 1:
             self.warn_text = "! YOU MUST TO TYPE WORD LIST"
