@@ -118,18 +118,45 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/cnpm40
 - **Explain why this enhancement would be useful** to most CONTRIBUTING.md users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
 
 
-
 ### Your First Code Contribution
+Unsure where to begin contributing? You can start by looking through these beginner and help-wanted issues:
 
+- Beginner issues - issues which should only require a few lines of code, and a test or two.
+- Help wanted issues - issues which should be a bit more involved than beginner issues.
 
 ### Improving The Documentation
+Your knowledge and insight are valuable! Please contribute enhancements to the documentation via pull requests.
 
+## Reporting Issues and Suggesting Enhancements
+
+- If you find a bug or want to add new features, please go to the issue tracker (https://github.com/cnpm40/word_search/issues) and open an issue.
+- Before you do that, please read the guidelines on Reporting Bugs and Suggesting Enhancements.
+
+## Pull Requests
+
+Do you want to suggest a fix/improvement? Great! Here are steps to follow:
+
+1. Fork the repository.
+2. Create a new branch: git checkout -b my-new-feature-branch.
+3. Make your changes and commit them: git commit -am 'Add some feature'
+4. Push the branch: git push origin my-new-feature-branch.
+5. Submit a pull request.
+
+Detailed information about how to create a pull request can be found here (https://opensource.guide/how-to-contribute/#opening-a-pull-request).
 
 ## Styleguides
-### Commit Messages
 
+### Git Commit Messages
+- Use the present tense ("Add feature" not "Added feature").
+- Use the imperative mood ("Move cursor to..." not "Moves cursor to...").
+- Limit the first line to 72 characters or less.
+- Reference issues and pull requests liberally after the first line.
+- Consider starting the commit message with an applicable emoji:
+    - 🏗️ :building_construction: when adding or upgrading infrastructure.
+    - 🐛 :bug: when fixing a bug.
+    - 📝 :memo: when writing docs.
 
-## Join The Project Team
+For more information on how to contribute, please refer to our Contribution Guide (https://github.com/cnpm40/word_search/CONTRIBUTING.md).
 
 
 
