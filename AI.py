@@ -222,27 +222,41 @@ def check_internet():
 
 # Generate words
 def gen_word():
-    # Check internet
+    #Check internet
     if check_internet() is False:
-        check_alert = Alert(window, 5)
+        alert5 = Alert(window, 5)
     else:
-    # Check
-        text2 = get_entry_data_2()
-        text3 = get_entry_data_3()
-        if text3 == "":
-            alert3 = Alert(window, 2)
-        elif text2 == "":
-            alert2 = Alert(window, 3)
+        global last_pressed_time
+        
+        current_time = time.time()
+        
+        # Kiểm tra nếu đây là lần đầu tiên nhấn, hoặc đã qua 30 giây từ lần cuối cùng
+        if last_pressed_time is None or current_time - last_pressed_time >= 15:
+            last_pressed_time = current_time
+        
+            # Check
+            text2 = get_entry_data_2()
+            text3 = get_entry_data_3()
+            if text3 == "":
+                alert3 = Alert(window, 2)
+            elif text2 == "":
+                alert2 = Alert(window, 3)
+            else:
+                # Prompt
+                prompt = f"Generate 15 compound words related to {get_entry_data_3()} in {get_entry_data_2()} with a maximum length of 12 characters suitable for {get_combobox2_selection()}."
+
+                # Get answer
+                ans = llm.invoke(prompt)
+                print(ans.content)
+
+                # Insert Word
+                entry_1.delete("1.0", "end")
+                entry_1.insert("1.0", ans.content)
+                
         else:
-            # Prompt
-            prompt = f"Generate 15 compound words related to {get_entry_data_3()} in {get_entry_data_2()} with a maximum length of 12 characters suitable for {get_combobox2_selection()}."
-
-            # Get answer
-            ans = llm.invoke(prompt)
-
-            # Insert Word
-            entry_1.delete("1.0", "end")
-            entry_1.insert("1.0", ans.content)
+            # Hiển thị thông báo nếu nhấn quá sớm
+            wait_time = 15 - (current_time - last_pressed_time)
+            alert5 =  Alert(window, 6, int(wait_time)) 
 
 # Run about menu
 def run_about():
