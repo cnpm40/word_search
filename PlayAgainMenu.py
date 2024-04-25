@@ -24,7 +24,7 @@ class PlayAgainMenu:
         if self.mode == 1:
             self.warn_text = "ARE YOU SURE PLAY AGAIN?"
         if self.mode == 2:
-            self.warn_text = "YOU HAVE FOUND ALL THE WORDS. PLAY AGAIN?"
+            self.warn_text = " YOU HAVE FOUND ALL THE WORDS. PLAY AGAIN?"
 
         # Make window for menu
         self.toplevel = tk.Toplevel(master, height = 563, width = 275, bg="#FFFFFF")
