@@ -134,4 +134,4 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/cnpm40
 
 
 ## Attribution
-This guide is based on the **contributing.md**. [Make your own](https://contributing.md/)!
+This guide is based on the **contributing.md**. [Make your own](https://github.com/bttger/contributing-gen)!
