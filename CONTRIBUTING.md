@@ -129,7 +129,7 @@ Your knowledge and insight are valuable! Please contribute enhancements to the d
 
 ## Reporting Issues and Suggesting Enhancements
 
-- If you find a bug or want to add new features, please go to the issue tracker (https://github.com/cnpm40/word_search/issues) and open an issue.
+- If you find a bug or want to add new features, please go to the .[issue tracker](https://github.com/cnpm40/word_search/issues) and open an issue.
 - Before you do that, please read the guidelines on Reporting Bugs and Suggesting Enhancements.
 
 ## Pull Requests
@@ -142,7 +142,7 @@ Do you want to suggest a fix/improvement? Great! Here are steps to follow:
 4. Push the branch: git push origin my-new-feature-branch.
 5. Submit a pull request.
 
-Detailed information about how to create a pull request can be found here (https://opensource.guide/how-to-contribute/#opening-a-pull-request).
+Detailed information about how to create a pull request can be found .[here](https://opensource.guide/how-to-contribute/#opening-a-pull-request).
 
 ## Styleguides
 
@@ -156,7 +156,7 @@ Detailed information about how to create a pull request can be found here (https
     - 🐛 :bug: when fixing a bug.
     - 📝 :memo: when writing docs.
 
-For more information on how to contribute, please refer to our Contribution Guide (https://github.com/cnpm40/word_search/CONTRIBUTING.md).
+For more information on how to contribute, please refer to .[our Contribution Guide](https://github.com/cnpm40/word_search/CONTRIBUTING.md).
 
 
 
