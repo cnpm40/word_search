@@ -222,7 +222,7 @@ def browse_directory():
 # Get data from entry_1
 def get_entry_data():
     text = entry_1.get("1.0", 'end-1c')
-    if text == 'Type words here (Example: cat dog rat...):':
+    if text == 'Type words here(Example: cat dog rat...)':
         text = ""
     words = text.split()
     size = get_radiobutton_selection()
@@ -257,9 +257,9 @@ def get_radiobutton_selection():
     if selection == "Small":
         return 15
     if selection == "Medium":
-        return 18
+        return 17
     if selection == "Large":
-        return 21
+        return 19
 
 # SCRAMBLE THE PUZZLE
 def make_puzzle():
@@ -284,8 +284,6 @@ def make_puzzle():
         puzzle.apply_mask(Heart())    
     if mask == "Diamond":
         puzzle.apply_mask(Diamond())
-    if mask == "Donut":
-        puzzle.apply_mask(Donut())
     if mask == "Hexagon":
         puzzle.apply_mask(Hexagon())
     if mask == "Octagon":
@@ -404,15 +402,15 @@ entry_1 = CTkTextbox(
 )
 def on_entry1_click(event):
     # function that gets called whenever entry1 is clicked
-    if entry_1.get("1.0", 'end-1c') == 'Type words here (Example: cat dog rat...):':
+    if entry_1.get("1.0", 'end-1c') == 'Type words here(Example: cat dog rat...)':
         entry_1.delete("1.0", "end")  # delete all the text in the entry
         entry_1.insert("1.0", '')  # Insert blank for user input
 def on_entry1_focusout(event):
     if entry_1.get("1.0", 'end-1c') == '':
-        entry_1.insert("1.0", 'Type words here (Example: cat dog rat...):')
+        entry_1.insert("1.0", 'Type words here(Example: cat dog rat...)')
 entry_1.bind('<FocusIn>', on_entry1_click)
 entry_1.bind('<FocusOut>', on_entry1_focusout)
-entry_1.insert("1.0", 'Type words here (Example: cat dog rat...):')
+entry_1.insert("1.0", 'Type words here(Example: cat dog rat...)')
 entry_1.place(
     x=17.0,
     y=90.0,
@@ -443,7 +441,7 @@ entry_2.place(
 )
 
 # Button List word search shape
-values = ["Square", "Circle", "Heart", "Diamond", "Donut", "Hexagon", "Octagon", "Pentagon"]  # Replace with your options
+values = ["Square", "Circle", "Heart", "Diamond", "Hexagon", "Octagon", "Pentagon"]  # Replace with your options
 combobox1 = CTkComboBox(window, values=values, width=270, state="readonly", fg_color="white", dropdown_font=("Nunito", 13), dropdown_fg_color="white", dropdown_text_color="black", text_color="black", border_color="white", button_color="white", dropdown_hover_color="#D18686", button_hover_color="#D18686", bg_color="#F3F3F3", font=("Nunito", 15))
 combobox1.set("Square")
 x1, y1, x2, y2 = 100.0, 280.0, 205.0, 352.0
@@ -465,8 +463,8 @@ canvas.create_window(x+120, y, window=my_label)
 #Button WORD SEARCH SIZE small - medium - large
 size_var = StringVar()
 radiobutton_small = CTkRadioButton(window, text="Small\n(15 x 15)", variable=size_var, value="Small", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
-radiobutton_medium = CTkRadioButton(window, text="Medium\n(18 x 18)", variable=size_var, value="Medium", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
-radiobutton_large = CTkRadioButton(window, text="Large\n(21 x 21)", variable=size_var, value="Large", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
+radiobutton_medium = CTkRadioButton(window, text="Medium\n(17 x 17)", variable=size_var, value="Medium", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
+radiobutton_large = CTkRadioButton(window, text="Large\n(19 x 19)", variable=size_var, value="Large", font=("Nunito", 14), bg_color="#F3F3F3", text_color="black", fg_color="#D18686")
 size_var.set("Small")
 x1, y1, x2, y2 = 15.0, 394.0, 293.0, 500.0
 x_small = x1 + (x2 - x1) / 6 + 15
