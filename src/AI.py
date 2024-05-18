@@ -244,7 +244,7 @@ def gen_word():
                 alert2 = Alert(window, 3)
             else:
                 # Prompt
-                prompt = f"Generate 15 compound words related to {get_entry_data_3()} in {get_entry_data_2()} with a maximum length of 12 characters suitable for {get_combobox2_selection()}."
+                prompt = f"Generate 10 single words related to {get_entry_data_3()} in {get_entry_data_2()} with a maximum length of 12 characters suitable for {get_combobox2_selection()}."
 
                 # Get answer
                 ans = llm.invoke(prompt)

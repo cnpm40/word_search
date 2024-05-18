@@ -38,6 +38,14 @@ Replace your-api-key-goes-here with your actual OpenAI API key. If you haven't o
 3. Save the File: Save the `.env` file in your project directory.
 
 ## Instruction manual
+1. Open a terminal or command prompt.
+2. Navigate to the root directory of your project.
+3. Run the following commands:
+
+```python 
+cd src
+python MainMenu.py
+```
 
 ## Personas, User story and Scenarios
 

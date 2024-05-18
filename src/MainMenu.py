@@ -86,7 +86,7 @@ DEF
 # AI mode
 def run_program_1():
     window.destroy()
-    os.system("python ai.py")
+    os.system("python Ai.py")
 
 # Human mode
 def run_program_2():
