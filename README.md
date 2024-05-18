@@ -1,6 +1,6 @@
 # Word Search Generator
 
-![Image description](/image/image1.png "Image title")
+![Image description](src/image/image1.png "Image title")
 
 ## Introduction
 ### Overview
@@ -14,7 +14,7 @@ The Word Search Generator is a tool used to create random word search games. It'
 6. Export the word search as a PDF.
 7. AI assistance in generating themed, subject-specific, and grade-level words.
 
-![Image description](image/image2.png "Image title")
+![Image description](src/image/image2.png "Image title")
 
 ## Installation
 ### Set up required dependencies
