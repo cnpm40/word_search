@@ -1,7 +1,8 @@
 # Word Search Generator
 
 ![Image description](src/image/image1.png "Image title")
-
+[Video Demo](https://youtu.be/YfVdxHjWbA4)
+[Report]()
 ## Introduction
 ### Overview
 The Word Search Generator is a tool used to create random word search games. It's an excellent tool for improving vocabulary and observation skills, while also providing an enjoyable form of entertainment. The Word Search Generator is particularly suitable for teachers who want to create engaging learning activities for students, or for anyone who wants to create a personalized word search game.
